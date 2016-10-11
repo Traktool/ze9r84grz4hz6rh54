@@ -16,10 +16,10 @@ Class QuestManager
     Public Shared Sub LoadQuestObjectifs()
         '  MyConsole.StartLoading("Loading QuestObjectifs from database...")
 
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
 
             Dim SQLText As String = "SELECT * FROM quest_objectifs"
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
             Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
 
             While Result.Read
@@ -53,10 +53,10 @@ Class QuestManager
     Public Shared Sub LoadQuestSteps()
         ' MyConsole.StartLoading("Loading QuestSteps from database...")
 
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
 
             Dim SQLText As String = "SELECT * FROM quest_steps"
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
             Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
 
             While Result.Read
@@ -119,10 +119,10 @@ Class QuestManager
 
         ' MyConsole.StartLoading("Loading Quests from database...")
 
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
 
             Dim SQLText As String = "SELECT * FROM quests"
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
 
             Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
 

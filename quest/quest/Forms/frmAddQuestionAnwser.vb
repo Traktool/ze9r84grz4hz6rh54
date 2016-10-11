@@ -1,11 +1,11 @@
-﻿Public Class qetrep
+﻿Public Class frmAddQuestionAnwser
 
    
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        condition.Close()
-        condition.Show()
-        condition.CheckBox7.Checked = True
-        condition.CheckBox7.Enabled = False
+        frmCondition.Close()
+        frmCondition.Show()
+        frmCondition.CheckBox7.Checked = True
+        frmCondition.CheckBox7.Enabled = False
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

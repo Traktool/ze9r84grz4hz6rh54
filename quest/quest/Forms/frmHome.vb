@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class frmHome
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        sql.OpenConnexion() 'Connexion Sql
+        Manager.OpenConnexion() 'Connexion Sql
 
         QuestManager.LoadQuestObjectifs() 'Quetes
         QuestManager.LoadQuestSteps() 'Quetes
@@ -38,7 +38,7 @@ Public Class frmHome
 
             lstQuestStep.Items.Clear()
             lvwStepItems.Items.Clear()
-            ListBox4.Items.Clear()
+            ListBoxQuestion.Items.Clear()
             '  ListBox5.Items.Clear()
             TextBox15.Text = ""
             TextBox16.Text = ""
@@ -70,7 +70,7 @@ Public Class frmHome
                     For k As Integer = 0 To strSplitQuestQuestion.Count - 1
                         Dim NewQuestionAndRep As New questionrep
                         NewQuestionAndRep.Question = strSplitQuestQuestion(k)
-                        ListBox4.Items.Add(strSplitQuestQuestion(k))
+                        ListBoxQuestion.Items.Add(strSplitQuestQuestion(k))
                         NewQuestionAndRep.rep = strSplitQuestReponse(k)
                         NewQuestionAndRep.Cond = strSplitQuestCondition(k)
                         objQuest.Questionrrep.Add(NewQuestionAndRep)
@@ -91,7 +91,7 @@ Public Class frmHome
                 For k As Integer = 0 To objQuest.Questionrrep.Count - 1
                     '    Dim NewQuestionAndRep As New questionrep
                     '    NewQuestionAndRep.Question = strSplitQuestQuestion(k)
-                    ListBox4.Items.Add(objQuest.Questionrrep(k).Question)
+                    ListBoxQuestion.Items.Add(objQuest.Questionrrep(k).Question)
                     '   NewQuestionAndRep.rep = strSplitQuestReponse(k)
                     '    NewQuestionAndRep.Cond = strSplitQuestCondition(k)
                     '    objQuest.Questionrrep.Add(NewQuestionAndRep)
@@ -139,7 +139,7 @@ Public Class frmHome
         RichTextBox2.Clear()
         Dim Result As MySqlDataReader = Nothing
         '   Dim SQLText As String = "DELETE FROM player_characters WHERE id=@CharacterName"
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
             Dim SQLText As String
             If types <> "" Then
                 SQLText = "SELECT * FROM questsinfos Where ID=@CharacterName and Types=@type"
@@ -150,7 +150,7 @@ Public Class frmHome
             End If
             '  MyConsole.StartLoading("Loading QuestObjectifs from database...")
 
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
             '    Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
             SQLCommand.Parameters.Add(New MySqlParameter("@CharacterName", CharacterName))
             If types <> "" Then
@@ -291,14 +291,14 @@ Public Class frmHome
     Private Sub npcs(ByVal CharacterName As Integer)
         Dim Result As MySqlDataReader = Nothing
         '   Dim SQLText As String = "DELETE FROM player_characters WHERE id=@CharacterName"
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
             Dim SQLText As String
 
             SQLText = "SELECT * FROM questsinfos Where ID=@CharacterName"
 
             '  MyConsole.StartLoading("Loading QuestObjectifs from database...")
 
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
             '    Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
             SQLCommand.Parameters.Add(New MySqlParameter("@CharacterName", CharacterName))
 
@@ -317,7 +317,7 @@ Public Class frmHome
     Private Function objet(ByVal CharacterName As Integer)
 
         '   Dim SQLText As String = "DELETE FROM player_characters WHERE id=@CharacterName"
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
             Dim SqlInfos
             Dim Result As MySqlDataReader = Nothing
             Dim SQLText As String
@@ -326,7 +326,7 @@ Public Class frmHome
 
             '  MyConsole.StartLoading("Loading QuestObjectifs from database...")
 
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
             '    Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
             SQLCommand.Parameters.Add(New MySqlParameter("@CharacterName", CharacterName))
 
@@ -346,7 +346,7 @@ Public Class frmHome
 
     Private Sub TextBox13_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox13.TextChanged
 
-        Dim cmd As New MySqlCommand("Select Name,ID FROM items_data", sql.Accounts)
+        Dim cmd As New MySqlCommand("Select Name,ID FROM items_data", Manager.Accounts)
 
         '   Dim cmd As New SqlCommand("Select Name FROM items_data", sql.Accounts)
         ' If con.State = ConnectionState.Closed Then sql.Accounts.Open()
@@ -388,11 +388,11 @@ Public Class frmHome
         Return Nothing
     End Function
 
-    Private Sub ListBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox4.SelectedIndexChanged
-        If ListBox4.SelectedItem <> Nothing Then
+    Private Sub ListBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxQuestion.SelectedIndexChanged
+        If ListBoxQuestion.SelectedItem <> Nothing Then
             '     ListBox5.SelectedItem =
-            infosques(ListBox4.SelectedItem.ToString, "o")
-            Dim QInfo As questionrep = GetQuestion(ListBox4.SelectedItem.ToString)
+            infosques(ListBoxQuestion.SelectedItem.ToString, "o")
+            Dim QInfo As questionrep = GetQuestion(ListBoxQuestion.SelectedItem.ToString)
             TextBox1.Text = QInfo.rep
 
             ComboBox2.Items.Clear()
@@ -446,17 +446,17 @@ Public Class frmHome
     'Move up
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         'Make sure our item is not the first one on the list.
-        If ListBox4.SelectedIndex > 0 Then
-            Dim I = ListBox4.SelectedIndex - 1
+        If ListBoxQuestion.SelectedIndex > 0 Then
+            Dim I = ListBoxQuestion.SelectedIndex - 1
             ' ListBox5.Items.Insert(I, ListBox5.SelectedItem = ListBox4.SelectedIndex - 1)
             'ListBox5.Items.RemoveAt(ListBox5.SelectedIndex = ListBox4.SelectedIndex - 1)
             '  ListBox5.SelectedIndex = I
-            ListBox4.Items.Insert(I, ListBox4.SelectedItem)
+            ListBoxQuestion.Items.Insert(I, ListBoxQuestion.SelectedItem)
             ' ListBox5.Items.Insert(I, ListBox5.SelectedItem)
-            ListBox4.Items.RemoveAt(ListBox4.SelectedIndex)
+            ListBoxQuestion.Items.RemoveAt(ListBoxQuestion.SelectedIndex)
             ' ListBox5.Items.RemoveAt(ListBox5.SelectedIndex)
 
-            ListBox4.SelectedIndex = I
+            ListBoxQuestion.SelectedIndex = I
             '  ListBox5.SelectedIndex = I
         End If
     End Sub
@@ -464,34 +464,34 @@ Public Class frmHome
     'Move down
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         'Make sure our item is not the last one on the list.
-        If ListBox4.SelectedIndex < ListBox4.Items.Count - 1 Then
+        If ListBoxQuestion.SelectedIndex < ListBoxQuestion.Items.Count - 1 Then
             'Insert places items above the index you supply, since we want
             'to move it down the list we have to do + 2
-            Dim I = ListBox4.SelectedIndex + 2
-            ListBox4.Items.Insert(I, ListBox4.SelectedItem)
+            Dim I = ListBoxQuestion.SelectedIndex + 2
+            ListBoxQuestion.Items.Insert(I, ListBoxQuestion.SelectedItem)
             'ListBox5.Items.Insert(I, ListBox5.SelectedItem)
-            ListBox4.Items.RemoveAt(ListBox4.SelectedIndex)
+            ListBoxQuestion.Items.RemoveAt(ListBoxQuestion.SelectedIndex)
             ' ListBox5.Items.RemoveAt(ListBox5.SelectedIndex)
-            ListBox4.SelectedIndex = I - 1
+            ListBoxQuestion.SelectedIndex = I - 1
 
             ' ListBox5.SelectedIndex = I - 1
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAddStep.Click
         If lstQuest.SelectedItem <> Nothing Then
             Dim test As Quest = QuestManager.GetQuest(lstQuest.SelectedItem.ToString)
 
-            QuestManager.syncro(test, TextBox14.Text)
+            QuestManager.syncro(test, txtAddStep.Text)
             lstQuest.SelectedIndex = lstQuest.SelectedIndex - 1
             lstQuest.SelectedIndex = lstQuest.SelectedIndex + 1
         End If
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnAddObjectif.Click
         Dim test As Quest = QuestManager.GetQuest(lstQuest.SelectedItem.ToString)
         Dim teststep As QuestStep = QuestManager.GetQStep(lstQuestStep.SelectedItem.ToString)
-        QuestManager.syncrou(test, TextBox18.Text, teststep)
+        QuestManager.syncrou(test, txtAddObjectif.Text, teststep)
         lstQuestStep.SelectedIndex = lstQuestStep.SelectedIndex - 1
         lstQuestStep.SelectedIndex = lstQuestStep.SelectedIndex + 1
     End Sub
@@ -644,13 +644,13 @@ Public Class frmHome
         '  MyConsole.StartLoading("Loading QuestObjectifs from database...")
         RichTextBox4.Clear()
         Dim i = 0
-        Dim test As Quest = QuestManager.GetQuest(lstQuest.SelectedItem.ToString)
-        Dim teszt As QuestionNPC = question(test.id)
-        Dim SpellsSplitdzdzz() As String = teszt.Cond.Split("~")
-        For Each S In ListBox4.Items
+        Dim quest As Quest = QuestManager.GetQuest(lstQuest.SelectedItem.ToString)
+        Dim question As QuestionNPC = Me.question(quest.id)
+        Dim SpellsSplitQuestions() As String = question.Cond.Split("~")
+        For Each S In ListBoxQuestion.Items
 
-            RichTextBox4.AppendText("Condition :" & vbCrLf & DecrypteAndCrypte(SpellsSplitdzdzz(i), "d") & vbCrLf)
-            RichTextBox4.AppendText("       " & testefe(S, "q") & vbCrLf)
+            RichTextBox4.AppendText("Condition :" & vbCrLf & DecrypteAndCrypte(SpellsSplitQuestions(i), "d") & vbCrLf)
+            RichTextBox4.AppendText("       " & LoadDialog(S, "q") & vbCrLf)
             'If ListBox5.Items(i).ToString <> "0" Then
 
             Dim objQuest As Quest = QuestManager.GetQuest(lstQuest.SelectedItem.ToString)
@@ -661,7 +661,7 @@ Public Class frmHome
             For Each iSj In objQuest.Questionrrep
                 Dim SpellsSplit() As String = iSj.rep.Split(";")
                 For Each iSj2 In SpellsSplit
-                    RichTextBox4.AppendText("           " & testefe(iSj2, "a") & vbCrLf)
+                    RichTextBox4.AppendText("           " & LoadDialog(iSj2, "a") & vbCrLf)
                 Next
 
             Next
@@ -678,17 +678,17 @@ Public Class frmHome
         Next
     End Sub
 
-    Private Function testefe(S As String, Optional ByVal types As String = "") As String
+    Private Function LoadDialog(S As String, Optional ByVal types As String = "") As String
         Dim Result As MySqlDataReader = Nothing
         ' Dim SQLText As String = "DELETE FROM player_characters WHERE id=@CharacterName"
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
             Dim SQLText As String
 
             SQLText = "SELECT * FROM dialog Where ID=@CharacterName and Types=@type"
 
             '  MyConsole.StartLoading("Loading QuestObjectifs from database...")
 
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
             '    Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
             SQLCommand.Parameters.Add(New MySqlParameter("@CharacterName", S))
             SQLCommand.Parameters.Add(New MySqlParameter("@type", types))
@@ -714,14 +714,14 @@ Public Class frmHome
         Dim SpellsSplitMultiarg() As String = SpellsSplitdzdzz.Split(";")
         If SpellsSplitMultiarg.Count >= 1 Then
             For k As Integer = 0 To SpellsSplitMultiarg.Length - 1
-                final += "-" & fzefezefok(SpellsSplitMultiarg(k)) & vbCrLf
+                final += "-" & RenderConditionsListe(SpellsSplitMultiarg(k)) & vbCrLf
             Next
         End If
 
         Return final
     End Function
 
-    Public Function fzefezefok(k As String) As String
+    Public Function RenderConditionsListe(k As String) As String
         '  Dim final = ""
         Dim feeko
         If k.Contains("|") Then
@@ -757,14 +757,14 @@ Public Class frmHome
     End Function
 
     Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
-        condition.Close()
-        condition.Show()
+        frmCondition.Close()
+        frmCondition.Show()
     End Sub
 
     Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
-        condition.Close()
-        condition.Show()
-        condition.apeed()
+        frmCondition.Close()
+        frmCondition.Show()
+        frmCondition.SplitConditionsElements()
     End Sub
 
 #Region "Step"
@@ -865,8 +865,8 @@ Public Class frmHome
 #End Region
 
     Private Sub btnAddQuestionAndRep_Click(sender As Object, e As EventArgs) Handles btnAddQuestionAndRep.Click
-        qetrep.Close()
-        qetrep.Show()
+        frmAddQuestionAnwser.Close()
+        frmAddQuestionAnwser.Show()
     End Sub
 
     Private Sub Button8_Click_1(sender As Object, e As EventArgs) Handles Button8.Click

@@ -12,3 +12,16 @@ C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\quest.
 C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\WindowsApplication1.frmHome.resources
 C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\WindowsApplication1.condition.resources
 C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\WindowsApplication1.qetrep.resources
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\bin\Debug\quest.exe.config
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.exe
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.xml
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.pdb
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\bin\Debug\quest.exe
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\bin\Debug\quest.pdb
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\bin\Debug\quest.xml
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.vbprojResolveAssemblyReference.cache
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\WindowsApplication1.frmHome.resources
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.vbproj.GenerateResource.Cache
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\WindowsApplication1.frmCondition.resources
+C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\WindowsApplication1.frmAddQuestionAnwser.resources

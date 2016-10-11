@@ -12,11 +12,11 @@ Public Class NpcDialog
         ListOfQuestion.Clear()
         ListOfResponse.Clear()
         '  MyConsole.StartLoading("Loading question from database...")
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
 
             Dim SQLText As String = "SELECT * FROM npc_question"
 
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
 
             Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
 
@@ -85,10 +85,10 @@ Public Class NpcDialog
     Public Shared Sub LoadResponse()
 
         '  MyConsole.StartLoading("Loading response from database...")
-        SyncLock sql.AccountsSync
+        SyncLock Manager.AccountsSync
 
             Dim SQLText As String = "SELECT * FROM npc_response"
-            Dim SQLCommand As New MySqlCommand(SQLText, sql.Accounts)
+            Dim SQLCommand As New MySqlCommand(SQLText, Manager.Accounts)
 
             Dim Result As MySqlDataReader = SQLCommand.ExecuteReader
 

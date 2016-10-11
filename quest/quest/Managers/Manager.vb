@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class sql
+Public Class Manager
     Public Shared Accounts As New MySqlConnection
     Public Shared AccountsSync As New Object
     Public Shared Sub OpenConnexion()

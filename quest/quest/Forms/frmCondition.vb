@@ -1,16 +1,16 @@
-﻿Public Class condition
-    Dim fzefze = ""
+﻿Public Class frmCondition
+    Dim criptedConditions = ""
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         '   Dim test As New List(Of Integer)
 
         '    Return String.Join(",", test)
-        testedede()
+        VerifQuestNotEmpty()
         If CheckBox7.Checked = True Then
-            qetrep.TextBox3.Text = fzefze
-            Dim SpellsSplitMultiarg() As String = fzefze.Split(";")
+            frmAddQuestionAnwser.TextBox3.Text = criptedConditions
+            Dim SpellsSplitMultiarg() As String = criptedConditions.Split(";")
             If SpellsSplitMultiarg.Count >= 1 Then
-                For k As Integer = 0 To SpellsSplitMultiarg.Length - 1
-                    qetrep.RichTextBox1.AppendText("-" & frmHome.fzefezefok(SpellsSplitMultiarg(k)) & vbCrLf)
+                For i As Integer = 0 To SpellsSplitMultiarg.Length - 1
+                    frmAddQuestionAnwser.RichTextBox1.AppendText("-" & frmHome.RenderConditionsListe(SpellsSplitMultiarg(i)) & vbCrLf)
                 Next
             End If
             '     fzefze = String.Join(";", strTotalCond)
@@ -21,26 +21,26 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If CheckBox7.Checked = True Then
-            qetrep.TextBox3.Text = fzefze
-            Dim SpellsSplitMultiarg() As String = fzefze.Split(";")
+            frmAddQuestionAnwser.TextBox3.Text = criptedConditions
+            Dim SpellsSplitMultiarg() As String = criptedConditions.Split(";")
             If SpellsSplitMultiarg.Count >= 1 Then
                 For k As Integer = 0 To SpellsSplitMultiarg.Length - 1
-                    qetrep.RichTextBox1.AppendText("-" & frmHome.fzefezefok(SpellsSplitMultiarg(k)) & vbCrLf)
+                    frmAddQuestionAnwser.RichTextBox1.AppendText("-" & frmHome.RenderConditionsListe(SpellsSplitMultiarg(k)) & vbCrLf)
                 Next
             End If
             '     fzefze = String.Join(";", strTotalCond)
         Else
-            frmHome.TextBox2.Text = fzefze
+            frmHome.TextBox2.Text = criptedConditions
         End If
 
     End Sub
 
-    Sub apeed()
+    Sub SplitConditionsElements()
 
         Dim SpellsSplitMultiarg() As String = frmHome.TextBox2.Text.Split(";")
         If SpellsSplitMultiarg.Count >= 1 Then
-            For k As Integer = 0 To SpellsSplitMultiarg.Length - 1
-                fzefezefok(SpellsSplitMultiarg(k))
+            For i As Integer = 0 To SpellsSplitMultiarg.Length - 1
+                fzefezefok(SpellsSplitMultiarg(i))
             Next
         End If
 
@@ -87,18 +87,19 @@
             Case Else
                 Return k
         End Select
+        Return k
     End Function
 
-   
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        testedede()
+        VerifQuestNotEmpty()
 
         If CheckBox7.Checked = True Then
-            qetrep.TextBox3.Text = fzefze
-            Dim SpellsSplitMultiarg() As String = fzefze.Split(";")
+            frmAddQuestionAnwser.TextBox3.Text = criptedConditions
+            Dim SpellsSplitMultiarg() As String = criptedConditions.Split(";")
             If SpellsSplitMultiarg.Count >= 1 Then
                 For k As Integer = 0 To SpellsSplitMultiarg.Length - 1
-                    qetrep.RichTextBox1.AppendText("-" & frmHome.fzefezefok(SpellsSplitMultiarg(k)) & vbCrLf)
+                    frmAddQuestionAnwser.RichTextBox1.AppendText("-" & frmHome.RenderConditionsListe(SpellsSplitMultiarg(k)) & vbCrLf)
                 Next
             End If
             '     fzefze = String.Join(";", strTotalCond)
@@ -107,7 +108,7 @@
         End If
     End Sub
 
-    Private Sub testedede()
+    Private Sub VerifQuestNotEmpty()
         Dim strTotalCond As New List(Of String)
         If CheckBox1.Checked = True Then
             strTotalCond.Add("0")
@@ -132,10 +133,10 @@
         Dim SpellsSplitMultiarg() As String = String.Join(";", strTotalCond).Split(";")
         If SpellsSplitMultiarg.Count >= 1 Then
             For k As Integer = 0 To SpellsSplitMultiarg.Length - 1
-                RichTextBox1.AppendText("-" & frmHome.fzefezefok(SpellsSplitMultiarg(k)) & vbCrLf)
+                RichTextBox1.AppendText("-" & frmHome.RenderConditionsListe(SpellsSplitMultiarg(k)) & vbCrLf)
             Next
         End If
-        fzefze = String.Join(";", strTotalCond)
+        criptedConditions = String.Join(";", strTotalCond)
     End Sub
 
 End Class
