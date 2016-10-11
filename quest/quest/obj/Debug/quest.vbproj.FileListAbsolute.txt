@@ -1,0 +1,14 @@
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\bin\Debug\quest.exe.config
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\bin\Debug\quest.exe
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\bin\Debug\quest.pdb
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\bin\Debug\quest.xml
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\bin\Debug\MySql.Data.dll
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\quest.vbproj.GenerateResource.Cache
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\quest.exe
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\quest.xml
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\quest.pdb
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\quest.vbprojResolveAssemblyReference.cache
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\WindowsApplication1.frmHome.resources
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\WindowsApplication1.condition.resources
+C:\Users\Jean\Documents\Visual Studio 2012\Projects\quest\quest\obj\Debug\WindowsApplication1.qetrep.resources
