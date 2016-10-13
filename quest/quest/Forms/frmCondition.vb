@@ -109,6 +109,7 @@
     End Sub
 
     Private Sub VerifQuestNotEmpty()
+        'test
         Dim strTotalCond As New List(Of String)
         If CheckBox1.Checked = True Then
             strTotalCond.Add("0")
