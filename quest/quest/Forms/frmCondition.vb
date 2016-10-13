@@ -139,4 +139,7 @@
         criptedConditions = String.Join(";", strTotalCond)
     End Sub
 
+    Private Sub frmCondition_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '  test
+    End Sub
 End Class

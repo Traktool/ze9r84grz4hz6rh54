@@ -25,3 +25,7 @@ C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\WindowsAppli
 C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.vbproj.GenerateResource.Cache
 C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\WindowsApplication1.frmCondition.resources
 C:\Users\trak-\Source\Repos\ze9r84grz4hz6rh54\quest\quest\obj\Debug\WindowsApplication1.frmAddQuestionAnwser.resources
+C:\Users\Jean\Documents\GitHub\ze9r84grz4hz6rh54\ze9r84grz4hz6rh54\quest\ze9r84grz4hz6rh54\quest\quest\bin\Debug\quest.exe.config
+C:\Users\Jean\Documents\GitHub\ze9r84grz4hz6rh54\ze9r84grz4hz6rh54\quest\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.exe
+C:\Users\Jean\Documents\GitHub\ze9r84grz4hz6rh54\ze9r84grz4hz6rh54\quest\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.xml
+C:\Users\Jean\Documents\GitHub\ze9r84grz4hz6rh54\ze9r84grz4hz6rh54\quest\ze9r84grz4hz6rh54\quest\quest\obj\Debug\quest.pdb

@@ -193,7 +193,7 @@ Partial Class frmCondition
         Me.Button3.Text = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'condition
+        'frmCondition
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -215,7 +215,7 @@ Partial Class frmCondition
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button1)
-        Me.Name = "condition"
+        Me.Name = "frmCondition"
         Me.Text = "condition"
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
